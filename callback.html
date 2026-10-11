@@ -1,0 +1,13 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Anmeldung – ElektroWissen51</title><link rel="stylesheet" href="style.css"></head><body><main><img class="logo" src="logo.png" alt="ElektroWissen51 Logo"><nav><a href="index.html">Start</a><a href="nutzungsbedingungen.html">Nutzungsbedingungen</a><a href="datenschutz.html">Datenschutz</a><a href="impressum.html">Impressum</a></nav><h1>Anmeldung abgeschlossen</h1>
+<p id="msg">Prüfe Anmeldedaten …</p>
+<div class="card" id="box" hidden><p>Kopiere diesen Code und füge ihn in der Konsole des Bots ein. Teile ihn mit niemandem.</p><code id="code"></code><p><button id="copy" type="button">Code kopieren</button></p></div>
+<script>
+var p=new URLSearchParams(location.search),c=p.get("code"),e=p.get("error_description")||p.get("error");
+var m=document.getElementById("msg");
+if(c){m.textContent="Erfolgreich. Der Code gilt nur kurz.";document.getElementById("box").hidden=false;
+document.getElementById("code").textContent=c;
+document.getElementById("copy").onclick=function(){navigator.clipboard.writeText(c).then(function(){m.textContent="Kopiert."})}}
+else{m.textContent=e?("Fehler: "+e):"Kein Code in der Adresse gefunden."}
+history.replaceState(null,"",location.pathname);
+</script>
+<footer>© ElektroWissen51 · Kontakt: <a href="mailto:sebastian.kaewel@outlook.de">sebastian.kaewel@outlook.de</a></footer></main></body></html>
